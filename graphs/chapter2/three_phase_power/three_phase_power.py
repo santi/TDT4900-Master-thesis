@@ -22,5 +22,5 @@ plt.legend(loc=3)
 plt.margins(x=0., y=.1)
 plt.grid()
 
-plt.savefig(os.path.join(dir_path, 'three_phase_power.png'))
+plt.savefig(os.path.join(dir_path, 'three_phase_power.eps'), format='eps')
 plt.show()

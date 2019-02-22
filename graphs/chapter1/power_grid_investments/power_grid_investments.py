@@ -14,6 +14,6 @@ plt.grid()
 
 plt.xlabel('Year')
 plt.ylabel('Million NOK')
-plt.savefig(os.path.join(dir_path, 'power_grid_investments.png'))
+plt.savefig(os.path.join(dir_path, 'power_grid_investments.eps'), format='eps')
 plt.show()
 

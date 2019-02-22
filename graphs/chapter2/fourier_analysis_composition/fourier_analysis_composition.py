@@ -1,7 +1,7 @@
 from scipy.fftpack import fft
 import numpy as np
 import matplotlib.pyplot as plt
-import os 
+import os
 dir_path = os.path.dirname(os.path.realpath(__file__))
 
 t = np.linspace(0, 2, 2000)
@@ -28,11 +28,11 @@ s1 = (np.abs(fft)[2] * 2 / N) * np.sin(2 * np.pi * t)
 s2 = (np.abs(fft)[4] * 2 / N) * np.sin(4 * np.pi * t)
 s3 = (np.abs(fft)[8] * 2 / N) * np.sin(8 * np.pi * t)
 
-plt.plot(t, s1)
-plt.plot(t, s2)
-plt.plot(t, s3)
-plt.savefig(os.path.join(dir_path, 'fourier_analysis_comp_all.png'))
-
+plt.plot(t, s1, label='1st component')
+plt.plot(t, s2, label='2nd component')
+plt.plot(t, s3, label='3rd component')
+plt.legend()
+plt.savefig(os.path.join(dir_path, 'fourier_analysis_comp_all.eps'), format='eps')
 all_compositions.show()
 
 
@@ -44,7 +44,7 @@ composition1 = plt.figure(2)
 add_labels()
 
 plt.plot(t, s1)
-plt.savefig(os.path.join(dir_path, 'fourier_analysis_comp_1.png'))
+plt.savefig(os.path.join(dir_path, 'fourier_analysis_comp_1.eps'), format='eps')
 
 composition1.show()
 
@@ -58,7 +58,7 @@ composition2 = plt.figure(3)
 add_labels()
 
 plt.plot(t, s1 + s2)
-plt.savefig(os.path.join(dir_path, 'fourier_analysis_comp_2.png'))
+plt.savefig(os.path.join(dir_path, 'fourier_analysis_comp_2.eps'), format='eps')
 
 composition2.show()
 
@@ -71,7 +71,7 @@ composition3 = plt.figure(4)
 add_labels()
 
 plt.plot(t, s1 + s2 + s3)
-plt.savefig(os.path.join(dir_path, 'fourier_analysis_comp_3.png'))
+plt.savefig(os.path.join(dir_path, 'fourier_analysis_comp_3.eps'), format='eps')
 
 plt.show()
 

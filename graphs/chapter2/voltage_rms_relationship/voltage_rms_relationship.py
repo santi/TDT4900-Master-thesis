@@ -23,5 +23,5 @@ plt.margins(0, 0.05)
 
 plt.xlabel('Time (t)')
 plt.ylabel('Voltage (V)')
-plt.savefig(os.path.join(dir_path, 'voltage_rms_relationship.png'))
+plt.savefig(os.path.join(dir_path, 'voltage_rms_relationship.eps'), format='eps')
 plt.show()
