@@ -27,7 +27,7 @@ low_freq_signal = plt.figure(1)
 plt.ylabel("Amplitude")
 plt.xlabel("Time (t)")
 
-plt.xticks([0, 0.5, 1], [r"$0$", r"$\frac{1}{2} π$", r"$π$"])
+plt.xticks([0, 0.5, 1], [r"$0$", r"$π$", r"$2π$"])
 plt.yticks([])
 
 plt.title("Low frequency sampling")
@@ -49,7 +49,7 @@ high_freq_signal = plt.figure(2)
 plt.ylabel("Amplitude")
 plt.xlabel("Time (t)")
 
-plt.xticks([0, 0.5, 1], [r"$0$", r"$\frac{1}{2} π$", r"$π$"])
+plt.xticks([0, 0.5, 1], [r"$0$", r"$π$", r"$2π$"])
 plt.yticks([])
 
 plt.title("High frequency sampling")
@@ -71,34 +71,10 @@ f = np.linspace(0, 2 / T, N)
 print(len(f))
 print(len(fft))
 
-plt.ylabel("Fourier coefficient")
+plt.ylabel("Amplitude")
 plt.xlabel("Frequency (Hz)")
 plt.bar(f[:15], np.abs(fft)[:15] * 2 / N)  # 2 / N is a normalization factor
-plt.xticks(
-    [*range(0, 30, 2)],
-    [
-        "0",
-        "1π",
-        "2π",
-        "3π",
-        "4π",
-        "5π",
-        "6π",
-        "7π",
-        "8π",
-        "9π",
-        "10π",
-        "11π",
-        "12π",
-        "13π",
-        "14π",
-        # "15π",
-        # "16π",
-        # "17π",
-        # "18π",
-        # "19π",
-    ],
-)
+plt.xticks([*range(0, 30, 2)], [*range(15)])
 # plt.yticks([0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.9, 1.0])
 plt.savefig(os.path.join(dir_path, "low_sampling_frequency_fourier.eps"), format="eps")
 low_frequencies.show()
@@ -117,35 +93,11 @@ f2 = np.linspace(0, 2 / T2, N2)
 # print(len(f))
 # print(len(fft))
 
-plt.ylabel("Fourier coefficient")
+plt.ylabel("Amplitude")
 plt.xlabel("Frequency (Hz)")
 print(f2[:20])
 plt.bar(f2[:15], np.abs(fft2)[:15] * 2 / N2)  # 2 / N is a normalization factor
-plt.xticks(
-    [*range(0, 30, 2)],
-    [
-        "0",
-        "1π",
-        "2π",
-        "3π",
-        "4π",
-        "5π",
-        "6π",
-        "7π",
-        "8π",
-        "9π",
-        "10π",
-        "11π",
-        "12π",
-        "13π",
-        "14π",
-        # "15π",
-        # "16π",
-        # "17π",
-        # "18π",
-        # "19π",
-    ],
-)
+plt.xticks([*range(0, 30, 2)], [*range(15)])
 # plt.yticks([0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.9, 1.0])
 plt.savefig(os.path.join(dir_path, "high_sampling_frequency_fourier.eps"), format="eps")
 plt.show()
